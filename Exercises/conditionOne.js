@@ -1,5 +1,7 @@
 // Conditions Exercise No.: 1
+// Create a code snippet to check user status
 
+// Solution code:
 const isUserLoggedIn = true;
 const isProSubscriber = true;
 if (!isUserLoggedIn) {
