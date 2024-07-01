@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../../Weather_App/style.css">
 </head>
 <body>
     <div class="card">
@@ -39,8 +39,11 @@
     const apikey = "";
     const apiURL = "";
 
+    const searchBox = document.querySelector (".search input");
+    const searchBtn = document.querySelector (".search button");
+
     async function checkWeather (city) {
-        const response = await fetch (apiURL + `&appid=${apikey}`);
+        const response = await fetch (apiURL + city + `&appid=${apikey}`);
 
         var data = await response.json ();
 
@@ -52,7 +55,9 @@
         document.querySelector (".wind").innerHTML = data.wind.speed + " km/h";
 
     }
+searchBtn.addEventListener ("click", () => {
 
+}), 
     checkWeather ();
 </script>
 
