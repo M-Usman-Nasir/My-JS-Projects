@@ -11,6 +11,9 @@
         <div class="search">
             <input type="text" placeholder="Enter City Name" spellcheck="false">
             <button><img src="../../Images/weather-app-img/search.png" alt="Search Button"></button>
+            <div class="error">
+                <p>Invalid City Name</p>
+            </div>
         </div>
         <div class="weather">
             <img src="../../Images/weather-app-img/rain.png" alt="" class="Weather-Icon">
@@ -35,47 +38,7 @@
         </div>
     </div>
 
-<script>
-    const apikey = "";
-    const apiURL = "";
-
-    const searchBox = document.querySelector (".search input");
-    const searchBtn = document.querySelector (".search button");
-    const WeatherIcon = document.querySelector (".Weather-Icon");
-
-    async function checkWeather (city) {
-        const response = await fetch (apiURL + city + `&appid=${apikey}`);
-
-        var data = await response.json ();
-
-        console.log (data);
-
-        document.querySelector (".city").innerHTML = data.name;
-        document.querySelector (".temp").innerHTML = Math.round (data.main.temp)  + "°C";
-        document.querySelector (".humidity").innerHTML = data.main.humidity + "%";
-        document.querySelector (".wind").innerHTML = data.wind.speed + " km/h";
-
-        if (data.weather [0].main == "Clouds") {
-            Weather-Icon.src = "../../Images/weather-app-img/clouds.png";
-        }
-        else if (data.weather [0].main == "Clear") {
-        Weather-Icon.src = "../../Images/weather-app-img/clear.png";
-        }
-        else if (data.weather [0].main == "Rain") {
-        Weather-Icon.src = "../../Images/weather-app-img/rain.png";
-        }
-        else if (data.weather [0].main == "Drizzle") {
-        Weather-Icon.src = "../../Images/weather-app-img/drizzle.png";
-        }
-        else if (data.weather [0].main == "Mist") {
-        Weather-Icon.src = "../../Images/weather-app-img/mist.png";
-        }
-
-    }
-searchBtn.addEventListener ("click", () => {
-    checkWeather (searchBox.value);
-})
-</script>
+<script src="./script.js"></script>
 
 </body>
 </html>
