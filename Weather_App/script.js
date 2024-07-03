@@ -1,5 +1,5 @@
 const apikey = "";
-const apiURL = "";
+const apiUrl = "";
 
 const searchBox = document.querySelector (".search input");
 const searchBtn = document.querySelector (".search button");
