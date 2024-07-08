@@ -1,13 +1,30 @@
-const todoList = document.getElementById("todo-list");
-const newTodoInput = document.getElementById("new-todo");
-const addButton = document.getElementById("add-button");
+const inputBox = document.getElementById("input-box");
+const listContainer = document.getElementById("list-container");
 
-    addButton.addEventListener("click", function() {
-      const newTodoText = newTodoInput.value;
-      if (newTodoText) {
-        const newTodoItem = document.createElement("li");
-        newTodoItem.textContent = newTodoText;
-        todoList.appendChild(newTodoItem);
-        newTodoInput.value = "";
-      }
-    });
+function addTask() {
+  if (inputBox.value === "") {
+    alert ("You must write something");
+  } else {
+    let li = document.createElement("li");
+    li.innerHTML = inputBox.value;
+    listContainer = appendChild (li);
+    let span = document.createElement("span");
+    span.innerHTML = "\u00d7";
+    li.appendChild (span);
+  }
+  inputBox.value = ""; 
+}
+
+listContainer.addEventListener("click", function (e) {
+  if (e.target.tagName === "Li") {
+    e.target.classList.toggle ("checked");
+  }
+  else if (e.target.tagName === "SPAN") {
+    e.target.parentElement.remove ();
+  }
+}, false);
+
+function saveData() {
+  lo
+  
+}
