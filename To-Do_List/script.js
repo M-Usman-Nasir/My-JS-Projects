@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
       let li = document.createElement("li");
       li.innerHTML = inputBox.value;
       let span = document.createElement("span");
-      span.innerHTML = "\u00D7"; // Unicode for "x"
+      span.innerHTML = "\u00D7";
       li.appendChild(span);
       listContainer.appendChild(li);
     }
