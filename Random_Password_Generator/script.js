@@ -17,16 +17,16 @@ function createPassword() {
     while (length > password.length) {
         password += allChars[Math.floor(Math.random() * allChars.length)];
     }
-    passwordBox.value = password
+    passwordBox.value = password;
 };
 
-async function copyPassword() {
-    try {
-      await navigator.clipboard.writeText('This is the text to be copied');
-      console.log('Content copied to clipboard');
-      /* Resolved - text copied to clipboard successfully */
-    } catch (err) {
-      console.error('Failed to copy: ', err);
-      /* Rejected - text failed to copy to the clipboard */
-    }
-  };
+function copyPassword() {
+    navigator.clipboard.writeText(passwordBox.value)
+        .then(() => {
+            passwordBox.select();
+            // alert("Password copied to clipboard!");
+        })
+        .catch(err => {
+            console.error("Failed to copy text: ", err);
+        });
+};
